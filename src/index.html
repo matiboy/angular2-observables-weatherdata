@@ -10,9 +10,10 @@
   {{/unless}}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdn.concisecss.com/v3.4.0/concise.css">
 </head>
 <body>
-  <app-root>Loading...</app-root>
+  <app-root container><div class="spinner"></div></app-root>
   
     {{#each scripts.polyfills}}
     <script src="{{.}}"></script>

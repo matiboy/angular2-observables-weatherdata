@@ -32,10 +32,12 @@ const barrels: string[] = [
 
   // Thirdparty barrels.
   'rxjs',
+  'lodash',
 
   // App specific barrels.
   'app',
   'app/shared',
+  'app/weather-data',
   /** @cli-barrel */
 ];
 
@@ -43,6 +45,7 @@ const cliSystemConfigPackages: any = {};
 barrels.forEach((barrelName: string) => {
   cliSystemConfigPackages[barrelName] = { main: 'index' };
 });
+cliSystemConfigPackages.moment = {main: 'moment'};
 
 /** Type declaration for ambient System. */
 declare var System: any;
@@ -52,6 +55,8 @@ System.config({
   map: {
     '@angular': 'vendor/@angular',
     'rxjs': 'vendor/rxjs',
+    'moment': 'vendor/moment',
+    'lodash': 'vendor/lodash',
     'main': 'main.js'
   },
   packages: cliSystemConfigPackages
