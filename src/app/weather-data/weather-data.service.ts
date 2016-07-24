@@ -11,10 +11,13 @@ export class WeatherDataService {
 
   loadData(date:Moment):Observable<WeatherDataInterface> {
     console.log(`Querying for ${date.format(format)}`);
-    // Complete with the data found below after a delay of 0 - 3s
-    return Observable.timer(Math.random() * 3000).concat(Observable.of(data[date.format(format)]));
+    return Observable.create(observer => {
+      setTimeout(() => {
+        console.log(`Data loaded for ${date.format(format)}`);
+        observer.next(data[date.format(format)]);
+      }, Math.random() * 3000);
+    });
   }
-
 }
 // Create random data for the last 30 days
 const format = 'YYYY-MM-DD';

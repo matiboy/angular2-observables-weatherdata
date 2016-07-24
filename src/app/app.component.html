@@ -2,25 +2,25 @@
   <h1>Weather data</h1>
   <div row>
     <div column="4">
-      <button>Previous day</button>
+      <button (click)="dayChanges$.next(-1)">{{previousDate$ | async | date:'longDate'}}</button>
     </div>
     <div column="4" class="today">
-      Today
+      {{currentDate$ | async | date:'longDate'}}
     </div>
     <div column="4" class="next">
-      <button>Next day</button>
+      <button (click)="dayChanges$.next(1)">{{nextDate$ | async | date:'longDate'}}</button>
     </div>
   </div>
   <div container class="center">
       <div row class="temperature">
-          32°C
+          {{(weatherData$ | async)?.temperature}}°C
       </div>
       <div row>
           <div column="6">
-              Rain?
+              Rain? {{(weatherData$ | async)?.rain ? 'Yes' : 'No' }}
           </div>
           <div column="6">
-              Description
+              {{(weatherData$ | async)?.shortDescription }}
           </div>
       </div>
   </div>
