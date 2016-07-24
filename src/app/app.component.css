@@ -1,0 +1,15 @@
+.today {
+    text-align: center;
+    font-weight: bold;
+}
+
+.next {
+    text-align: right;
+}
+.center {
+    text-align: center;
+}
+.temperature {
+    font-size: 100px;
+    font-weight: bold;
+}
