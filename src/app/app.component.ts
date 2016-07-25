@@ -27,6 +27,6 @@ export class AppComponent implements AfterViewInit {
   ngAfterViewInit() {
     let previousButtonClicks$ = Observable.fromEvent(this.previous.nativeElement, 'click').map(_ => -1);
     let nextButtonClicks$ = Observable.fromEvent(this.next.nativeElement, 'click').map(_ => 1);
-    Observable.concat(previousButtonClicks$, nextButtonClicks$).startWith(0).subscribe(this.dayChanges$);
+    Observable.merge(previousButtonClicks$, nextButtonClicks$).startWith(0).subscribe(this.dayChanges$);
   }
 }
