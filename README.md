@@ -1,30 +1,24 @@
-# Angular2ObservablesDatedata
+# Angular2 Observables Weather data
+
+An example of usage of Observables in Angular 2 using scan, map, flatMap, switchMap and share.  
+It is meant to accompany [this RedApe EDU tutorial](https://youtu.be/U0hTZDfQ2AI). A [demo of the app](https://matiboy.github.io/angular2-observables-datedata/) is available on Github pages  
+
+To get the code as at the start of the video, clone using
+
+```
+git clone https://github.com/matiboy/angular2-observables-weatherdata.git --branch start
+```
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.10.
 
+## Dependencies
+
+1. Have Angular-CLI installed `npm install -g angular-cli`
+1. Install dependencies using `npm i`
+1. *should be automatically taken care of by npm post install* If you encouter typings issues, install Typescript definition files: `typings i` (run `npm i -g typings` if you do not have typings yet)
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/route/class`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/). 
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Deploying to Github Pages
-
-Run `ng github-pages:deploy` to deploy to Github Pages.
 
 ## Further help
 
