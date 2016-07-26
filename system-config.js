@@ -25,7 +25,6 @@ var barrels = [
     '@angular/platform-browser-dynamic',
     // Thirdparty barrels.
     'rxjs',
-    'lodash',
     // App specific barrels.
     'app',
     'app/shared',
@@ -36,6 +35,7 @@ barrels.forEach(function (barrelName) {
     cliSystemConfigPackages[barrelName] = { main: 'index' };
 });
 cliSystemConfigPackages.moment = { main: 'moment' };
+cliSystemConfigPackages.lodash = { main: 'lodash' };
 // Apply the CLI SystemJS configuration.
 System.config({
     map: {
