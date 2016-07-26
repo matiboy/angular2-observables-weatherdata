@@ -14,6 +14,7 @@ import {MomentedDatePipe} from './date.pipe';
 })
 export class AppComponent implements AfterViewInit {
   dayChanges$ = new Subject<number>();
+  loading$ = new Subject<boolean>();
   daysFromToday$ = this.dayChanges$.scan((ov, nv) => ov + nv, 0);
   currentDate$ = this.daysFromToday$.map(n => moment().add(n, 'days'));
   previousDate$ = this.currentDate$.map(m => m.clone().subtract(1, 'days'));
@@ -22,6 +23,10 @@ export class AppComponent implements AfterViewInit {
   constructor(private weatherData:WeatherDataService) {}
 
   ngAfterViewInit() {
+    Observable.merge(
+      this.dayChanges$.map(_ => true),
+      this.weatherData$.map(_ => false)
+    ).subscribe(this.loading$);
     this.dayChanges$.next(0);
   }
 }
