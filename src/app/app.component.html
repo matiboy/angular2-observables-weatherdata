@@ -8,7 +8,7 @@
       {{currentDate$ | async | date:'longDate'}}
     </div>
     <div column="4" class="next">
-      <button (click)="dayChanges$.next(1)">{{nextDate$ | async | date:'longDate'}}</button>
+      <button (click)="dayChanges$.next(1)" [disabled]="(daysFromToday$ | async)>=0">{{nextDate$ | async | date:'longDate'}}</button>
     </div>
   </div>
   <div container class="center">
