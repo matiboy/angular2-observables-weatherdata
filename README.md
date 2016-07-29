@@ -1,7 +1,7 @@
 # Angular2 Observables Weather data
 
 An example of usage of Observables in Angular 2 using scan, map, flatMap, switchMap and share.  
-It is meant to accompany [this RedApe EDU tutorial](https://youtu.be/U0hTZDfQ2AI). A [demo of the app](https://matiboy.github.io/angular2-observables-weatherdata/) is available on Github pages  
+It is meant to accompany [this RedApe EDU tutorial](https://youtu.be/DnVv9H-wINc). A [demo of the app](https://matiboy.github.io/angular2-observables-weatherdata/) is available on Github pages  
 
 To get the code as at the start of the video, clone using
 
