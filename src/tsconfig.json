@@ -18,16 +18,6 @@
 
   "files": [
     "main.ts",
-    "typings.d.ts",
-    "system-config",
-    "app/date-selector/date-selector.component.ts",
-    "app/date-selector/date-selector.component.spec.ts",
-    "app/weather-display/weather-display.component.spec.ts",
-    "app/weather-display/weather-display.component.ts",
-    "app/weather-data/weather-data.service.spec.ts",
-    "app/weather-data/weather-data.service.ts",
-    "app/weather-data/weather-data.interface.ts",
-    "app/date.pipe.spec.ts",
-    "app/date.pipe.ts"
+    "typings.d.ts"
   ]
 }
