@@ -11,7 +11,7 @@
       <button (click)="dayChanges$.next(1)" [disabled]="(daysFromToday$ | async)>=0">{{nextDate$ | async | date:'longDate'}}</button>
     </div>
   </div>
-  <div container class="center" @loadingState="hidden$ | async">
+  <div container class="center" @loadingState="loading$ | async">
       <div row class="temperature">
           {{(weatherData$ | async)?.temperature}}°C
       </div>

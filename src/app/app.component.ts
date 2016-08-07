@@ -17,13 +17,13 @@ import {MomentedDatePipe} from './date.pipe';
   pipes: [MomentedDatePipe],
   animations: [
     trigger('loadingState', [
-      state('notloading', style({
+      state('false', style({
         opacity: '1'
       })),
-      state('loading',   style({
+      state('true',   style({
         opacity: '0.3'
       })),
-      transition('loading <=> notloading', animate('150ms'))
+      transition('* <=> *', animate('150ms'))
     ])
   ]
 })
@@ -38,7 +38,6 @@ export class AppComponent implements AfterViewInit {
       this.dayChanges$.map(_ => true),
       this.weatherData$.map(_ => false)
   );
-  hidden$ = this.loading$.map(b => b ? 'loading' : 'notloading');
   constructor(private weatherData:WeatherDataService) {
   }
 
