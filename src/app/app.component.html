@@ -24,4 +24,7 @@
           </div>
       </div>
   </div>
+  <input #fN (change)="firstName$.next(fN.value)">
+  <input #lN (change)="lastName$.next(lN.value)">
+  <input #i [value]="initials$ | async" (change)="initials$.next(i.value)">
 </div>

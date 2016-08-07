@@ -39,10 +39,26 @@ export class AppComponent implements AfterViewInit {
       this.weatherData$.map(_ => false)
   );
   hidden$ = this.loading$.map(b => b ? 'loading' : 'notloading');
+  firstName$ = new Subject<string>();
+  lastName$ = new Subject<string>();
+  initials$ = new Subject<string>();
   constructor(private weatherData:WeatherDataService) {
   }
 
   ngAfterViewInit() {
     this.dayChanges$.next(0);
+    Observable.combineLatest(
+      this.firstName$.startWith(''),
+      this.lastName$.startWith('')
+    )
+    .withLatestFrom(this.initials$.startWith(''))
+    .map(([[first, last], initials]) => {
+      first = first ? first[0].toUpperCase() : '';
+      last = last ? last[0].toUpperCase() : '';
+      if(!initials || initials.length < 2) {
+        return `${first}${last}`;
+      }
+      return initials;
+    }).subscribe(this.initials$);
   }
 }
